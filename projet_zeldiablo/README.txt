@@ -3,16 +3,16 @@
 ## Membres du groupe
 
 Liste des membres du projet :
-- Prenom Nom adresse@etu.univ-lorraine
-- Prenom Nom adresse@etu.univ-lorraine
-- Prenom Nom adresse@etu.univ-lorraine
-- Prenom Nom adresse@etu.univ-lorraine
+- Zaid Benzakour zayd.benzakour5@etu.univ-lorraine.fr
+- Dodler Hercule dodler.hercule1@etu.univ-lorraine.fr
+- Mhaimeur Mohamed mohamed-amin.mhaimeur-hachimi2@etu.univ-lorraine.fr
+- Jaquet-Hertgen Vincent vincent.jaquet-hertgen3@etu.univ-lorraine.fr
 
 Liste des adresses mail
-adresse@etu.univ-lorraine
-adresse@etu.univ-lorraine
-adresse@etu.univ-lorraine
-adresse@etu.univ-lorraine
+zayd.benzakour5@etu.univ-lorraine.fr
+dodler.hercule1@etu.univ-lorraine.fr
+mohamed-amin.mhaimeur-hachimi2@etu.univ-lorraine.fr
+vincent.jaquet-hertgen3@etu.univ-lorraine.fr
 
 ## Etat du projet
 
