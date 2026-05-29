@@ -1,0 +1,54 @@
+@startuml
+title Fonctionnalité 3 - Affichage avec le moteur graphique
+
+participant "MainZeldiablo" as Main
+participant "MoteurGraphique" as Moteur
+participant "InterfaceGraphique" as GUI
+participant "PanelDessin" as Panel
+participant "Controleur" as Controleur
+participant "Jeu" as Jeu
+participant "DessinJeu" as Dessin
+participant "Joueur" as Joueur
+participant "BufferedImage" as Image
+participant "Graphics2D" as Graphics
+
+Main -> Moteur : lancerJeu(400, 400)
+
+Moteur -> GUI : new InterfaceGraphique(dessin, 400, 400)
+GUI -> Panel : new PanelDessin(400, 400, dessin)
+GUI -> Controleur : new Controleur()
+GUI -> Panel : addKeyListener(controleur)
+GUI --> Moteur : interface créée
+
+loop tant que le jeu n'est pas fini
+    Moteur -> Jeu : etreFini()
+    Jeu --> Moteur : false
+
+    Moteur -> Controleur : getCommande()
+    Controleur --> Moteur : Commande
+
+    Moteur -> Jeu : evoluer(Commande)
+
+    Moteur -> GUI : dessiner()
+    GUI -> Panel : dessinerJeu()
+
+    Panel -> Dessin : dessiner(imageSuivante)
+    Dessin -> Image : getGraphics()
+    Image --> Dessin : Graphics2D
+
+    Dessin -> Jeu : getJoueur()
+    Jeu --> Dessin : joueur
+
+    Dessin -> Joueur : getPosX()
+    Joueur --> Dessin : posX
+
+    Dessin -> Joueur : getPosY()
+    Joueur --> Dessin : posY
+
+    Dessin -> Graphics : fillRect(posX*10, posY*10, 10, 10)
+
+    Panel -> Panel : échange imageSuivante / imageEnCours
+    Panel -> Panel : repaint()
+end
+
+@enduml

@@ -1,0 +1,33 @@
+@startuml
+title Fonctionnalité 2 - Création du labyrinthe
+
+actor Lanceur as User
+participant "MainZeldiablo" as Main
+participant "Jeu" as Jeu
+participant "Labyrinth" as Labyrinth
+participant "Joueur" as Joueur
+participant "MoteurGraphique" as Moteur
+participant "DessinJeu" as Dessin
+
+User -> Main : lance le programme
+Main -> Jeu : new Jeu()
+
+Jeu -> Labyrinth : new Labyrinth()
+Labyrinth -> Labyrinth : initialise tailleX
+Labyrinth -> Labyrinth : initialise tailleY
+Labyrinth --> Jeu : labyrinthe créé
+
+Jeu -> Joueur : new Joueur()
+Joueur -> Joueur : initialise posX = 1
+Joueur -> Joueur : initialise posY = 1
+Joueur --> Jeu : joueur créé
+
+Main -> Dessin : new DessinJeu(jeu)
+Dessin --> Main : afficheur créé
+
+Main -> Moteur : new MoteurGraphique(jeu, dessin)
+Moteur --> Main : moteur créé
+
+Main -> Moteur : lancerJeu(400, 400)
+
+@enduml+

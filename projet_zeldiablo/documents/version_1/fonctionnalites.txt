@@ -10,7 +10,8 @@ Le critère doit juste être fonctionnel et simple pour l'instant
     - Critère 1 : Le joueur peut se déplacer dans les 4 directions (Haut, Bas, Gauche, Droite)
     - Critère 2 : La position du joueur elle est mise à jour après chaque déplacement
     - Critère 3 : Le joueur ne peut pas sortir des limites de la carte
-    - Critère 4 : Déplacement visible et vérifiable dans le programme
+    - Critère 4 : Déplacement visible et vérifiable dans le programmeLe moteur d’affichage permet de représenter visuellement les éléments du jeu. Il affiche le labyrinthe, le joueur, les murs, les chemins et éventuellement la sortie ou les objectifs. Il sert à séparer la logique du jeu de son affichage afin de rendre le projet plus clair et plus facile à modifier.
+
 
 - Fonctionnalité 2 : Création de labyrinthe
 Description :
