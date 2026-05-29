@@ -1,21 +1,23 @@
-# Fonctionnalités prévues version 2
+* Fonctionnalité version 2
 
-- fonctionnalité 1 : nom
-  - descriptif texte : [...]
-  - critères de validation :
-    - critère 1 [...]
-    - critère 2 [...]
-  - responsables : [...]
+- Fonctionnalité : mur :
+Description :
+Le moteur affiche un carré de couleur différente afin de représenter un mur,
+le joueur ne pas marcher sur ce carré et ne peux pas le traverser (ça vaut aussi pour les attaques)
 
-- fonctionnalité 2 : nom
-  - descriptif texte : [...]
-  - critères de validation :
-    - critère 1 [...]
-    - critère 2 [...]
-  - responsables : [...]
+- critère de validation :
+    - critère 1 : Ne doit pas être traversable
+    - critère 2 : Le joueur ne doit pas pouvoir apparaître sur un mur
+    - critère 3 : Le joueur ne doit pas pouvoir attaques au travers
 
-[....]
+- Fonctionnalité : piege :
+Description :
+Le moteur affiche une case qui se fond partiellement avec le fond de l'image
+de façon à ce qu'il soit peu visible.
+Le joueur, lorsqu'il marche dessus, subis des dégats et le piège se désactive
 
-# Bilan
+- critère de validation :
+    - critère 1 : Le joueur doit pouvoir marcher dessus
+    - critère 2 : Le piège doit pouvoir s'activer lorsque le joueur passe dessus
+    - critère 3 : Le piège doit infliger des dégats et se désactiver lorsque le joueur marche dessus
 
-- Quelles fonctionnalités est validée ?
