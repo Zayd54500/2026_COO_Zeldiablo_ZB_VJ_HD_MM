@@ -3,21 +3,26 @@
 class Jeu{
 
 }
-class Mur{
+interface Case{
++ etreTraversable() : boolean
++ getX() : int
++ getY() : int
+}
+class Mur implements Case{
 - x : int
 - y : int
 + etreTraversable() : boolean
 + getX() : int
 + getY() : int    
 }
-class Vide{
+class Vide implements Case{
 - x : int
 - y : int
 + etreTraversable() : boolean
 + getX() : int
 + getY() : int    
 }
-class Piege{
+class Piege implements Case{
 - x : int
 - y : int
 + etreTraversable() : boolean
@@ -40,4 +45,5 @@ class Joueur implements Personnage {
 
 Jeu -> "1" Labyrinth : -laby
 Jeu -> "1" Personnage : -pj
+Labyrinth -> "*" Case : -listeCase
 @enduml
