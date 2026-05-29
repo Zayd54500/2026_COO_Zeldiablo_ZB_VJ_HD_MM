@@ -12,7 +12,7 @@ public class DessinJeu implements moteurJeu.DessinJeu {
     public void dessiner(BufferedImage image) {
         Graphics2D g = (Graphics2D) image.getGraphics();
         Personnage joueur = jeu.getJoueur();
-        g.fillRect(joueur.getPosX()*100, joueur.getPosY()*100, 10, 10);
+        g.fillRect(joueur.getPosX()*10, joueur.getPosY()*10, 10, 10);
         g.setColor(Color.blue);
     }
 }
