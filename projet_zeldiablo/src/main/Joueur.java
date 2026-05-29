@@ -3,6 +3,8 @@ package main;
 public class Joueur implements Personnage{
     private int posX;
     private int posY;
+    private int vie;
+    private int degats;
     public Joueur(){
         this.vie = 0;
         this.degats = 0;
