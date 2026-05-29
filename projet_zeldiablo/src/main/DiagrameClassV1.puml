@@ -2,46 +2,21 @@
 'https://plantuml.com/class-diagram
 class Jeu{
 }
-interface Case {
-+ etreTraversable() : boolean
-}
 
 interface Personnage {
 + deplacement(dir: char, laby: Labyrinth)
-+ attaquer(cible: Personnage)
-+ subirDegat(degats: int)
-+ etreMort() : boolean
-}
-
-class Mur implements Case {
-+ etreTraversable() : boolean
 }
 
 class Labyrinth {
-+ getListeCase() : ArrayList
-+ getCase(x: int, y: int) : Case
++Labyrinth()
 }
 
 class Joueur implements Personnage {
-- vie : int
-- degats : int
 - posX : int
 - posY : int
 + deplacement(dir: char, laby: Labyrinth)
-+ etreMort() : boolean
-+ subirDegat(degats: int)
-+ attaquer(cible: Personnage)
 }
 
-class Monstre implements Personnage {
-- vie : int
-- degats : int
-+ etreMort() : boolean
-+ deplacement(dir: char, laby: Labyrinth)
-+ subirDegat(degats: int)
-+ attaquer(cible: Personnage)
-}
 Jeu -> "1" Labyrinth : -laby
 Jeu -> "1" Personnage : -pj
-Labyrinth -> "*" Case : -listeCase
 @enduml

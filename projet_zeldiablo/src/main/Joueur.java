@@ -1,13 +1,11 @@
 package main;
 
 public class Joueur implements Personnage{
-    int vie;
-    int degats;
     private int posX;
     private int posY;
-    public Joueur(int vie, int degat){
-        this.vie = vie;
-        this.degats = degat;
+    public Joueur(){
+        this.vie = 0;
+        this.degats = 0;
         this.posX = 1;
         this.posY = 1;
     }
