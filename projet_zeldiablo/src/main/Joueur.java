@@ -10,6 +10,8 @@ public class Joueur implements Personnage{
 
     @Override
     public void deplacement(String dir, Labyrinth laby) {
-        
+        switch (dir){
+            
+        }
     }
 }
