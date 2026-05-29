@@ -5,7 +5,9 @@ public class Joueur implements Personnage{
     int degats;
     private int posX;
     private int posY;
-    public Joueur(int x, int y){
+    public Joueur(int x, int y, int vie, int degat){
+        this.vie = vie;
+        this.degats = degat;
         this.posX = x;
         this.posY = y;
     }
@@ -32,9 +34,20 @@ public class Joueur implements Personnage{
         }
     }
 
-    public void attaquer(Monstre monstre) {
-        if(!monstre.etreMort()) {
-            monstre.setVie(monstre.getVie() - this.degats);
+    public boolean etreMort() {
+        if (vie == 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public void subirDegat(int degats){
+        this.vie = this.vie - degats;
+    }
+
+    public void attaquer(Personnage cible) {
+        if(!cible.etreMort()) {
+            cible.subirDegat(this.degats);
         }
     }
 }
