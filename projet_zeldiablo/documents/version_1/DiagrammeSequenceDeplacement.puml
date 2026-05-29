@@ -1,0 +1,38 @@
+@startuml
+title Fonctionnalité 1 - Déplacement du joueur
+
+actor JoueurUtilisateur as User
+participant "Controleur" as Controleur
+participant "MoteurGraphique" as Moteur
+participant "Jeu" as Jeu
+participant "Joueur" as Joueur
+participant "Labyrinth" as Labyrinth
+
+User -> Controleur : appuie sur une touche\nhaut/bas/gauche/droite
+Controleur -> Controleur : mémorise la commande
+
+Moteur -> Controleur : getCommande()
+Controleur --> Moteur : Commande
+
+Moteur -> Jeu : evoluer(Commande)
+
+alt commande haut
+    Jeu -> Joueur : deplacement('N', laby)
+else commande bas
+    Jeu -> Joueur : deplacement('S', laby)
+else commande droite
+    Jeu -> Joueur : deplacement('E', laby)
+else commande gauche
+    Jeu -> Joueur : deplacement('O', laby)
+end
+
+Joueur -> Labyrinth : getTailleX() / getTailleY()
+Labyrinth --> Joueur : dimensions du labyrinthe
+
+alt déplacement valide
+    Joueur -> Joueur : met à jour posX / posY
+else déplacement impossible
+    Joueur -> Joueur : garde la même position
+end
+
+@enduml
