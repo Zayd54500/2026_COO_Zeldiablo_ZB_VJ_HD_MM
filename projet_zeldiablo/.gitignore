@@ -1,7 +1,0 @@
-# class
-out/
-*.class
-
-# config intelliJ
-.idea/
-*.iml
