@@ -35,3 +35,17 @@ Le joueur doit apparaitre dans une case de départ, puis se déplacer unniquemen
     - critère 2 : Le joueur est placé sur une case valide, donc sur un chemin accessible et pas dans un mur
     - critère 3 : Il existe au moins un chemin possible entre le départ et l'arrivé
     - critère 4 : Le joueur ne peut pas pas traverser les murs ni sortir des limites du labyrinthe
+
+- Fonctionnalité 4 : Afficher avec un moteur :
+Description :
+Le moteur d’affichage permet de représenter visuellement les éléments du jeu
+Il affiche le labyrinthe, le joueur, les murs, les chemins et éventuellement la sortie ou les objectifs
+Il sert à séparer la logique du jeu de son affichage afin de rendre le projet concret et visuel
+
+- critère de validation :
+    - critère 1 : Le moteur affiche correctement le moteur à l'écran
+    - critère 2 : Le joueur est visible et affiché au bon endroit dans
+    - critère 3 : Les murs et les chemins sont différent visuellement
+    - critère 4 : l'affichage se met à jour correctement l'orsque l'état du jeu change
+
+
