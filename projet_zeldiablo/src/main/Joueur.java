@@ -5,11 +5,11 @@ public class Joueur implements Personnage{
     int degats;
     private int posX;
     private int posY;
-    public Joueur(int x, int y, int vie, int degat){
+    public Joueur(int vie, int degat){
         this.vie = vie;
         this.degats = degat;
-        this.posX = x;
-        this.posY = y;
+        this.posX = 1;
+        this.posY = 1;
     }
     public void deplacement(char dir, Labyrinth laby) {
         switch (dir){
