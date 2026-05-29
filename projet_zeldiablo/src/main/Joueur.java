@@ -1,6 +1,8 @@
 package main;
 
 public class Joueur implements Personnage{
+    int vie;
+    int degats;
     private int posX;
     private int posY;
     public Joueur(int x, int y){
@@ -27,6 +29,12 @@ public class Joueur implements Personnage{
                 if(laby.getCase(this.posX, this.posY+1).etreTraversable()){
                     this.posY+=1;
                 }
+        }
+    }
+
+    public void attaquer(Monstre monstre) {
+        if(!monstre.etreMort()) {
+            monstre.setVie(monstre.getVie() - this.degats);
         }
     }
 }
