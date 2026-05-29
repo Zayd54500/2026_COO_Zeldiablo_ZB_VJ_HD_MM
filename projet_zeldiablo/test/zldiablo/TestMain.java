@@ -1,4 +1,4 @@
-package main;
+package zldiablo;
 
 import org.junit.Test;
 

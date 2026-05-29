@@ -1,6 +1,4 @@
-package main;
-
-import java.util.ArrayList;
+package zldiablo;
 
 public class Labyrinth {
     private int tailleX;

@@ -1,12 +1,10 @@
-package main;
-
-import arkanoidJeu.ArkanoidDessin;
-import arkanoidJeu.ArkanoidJeu;
+import zldiablo.DessinJeu;
+import zldiablo.Jeu;
 import moteurJeu.MoteurGraphique;
 
 import java.util.Scanner;
 
-public class Moteur {
+public class MainZeldiablo {
     public static void main(String[] args) throws InterruptedException {
         Jeu jeu = new Jeu();
         DessinJeu aff = new DessinJeu(jeu);

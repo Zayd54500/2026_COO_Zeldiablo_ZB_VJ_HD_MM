@@ -1,4 +1,4 @@
-package main;
+package zldiablo;
 
 public class Joueur implements Personnage{
     private int posX;
@@ -30,5 +30,11 @@ public class Joueur implements Personnage{
                     this.posY+=1;
                 }
         }
+    }
+    public int getPosX(){
+        return this.posX;
+    }
+    public int getPosY(){
+        return this.posY;
     }
 }

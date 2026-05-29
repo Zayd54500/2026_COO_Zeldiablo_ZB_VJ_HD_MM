@@ -1,4 +1,4 @@
-package main;
+package zldiablo;
 
 import moteurJeu.Commande;
 
@@ -21,7 +21,12 @@ public class Jeu implements moteurJeu.Jeu {
             this.joueur.deplacement('O', this.laby);
         }
     }
-
+    public Personnage getJoueur(){
+        return this.joueur;
+    }
+    public Labyrinth getLaby(){
+        return this.laby;
+    }
     @Override
     public boolean etreFini() {
         return false;

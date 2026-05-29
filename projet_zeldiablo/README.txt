@@ -24,4 +24,4 @@ Version 0:
 
 ## Lancement
 
-Classe principale : Main.main
+Classe principale : Main.zldiablo
