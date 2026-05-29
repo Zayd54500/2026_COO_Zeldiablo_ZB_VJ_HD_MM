@@ -9,8 +9,6 @@ public class Joueur implements Personnage{
         this.posX = x;
         this.posY = y;
     }
-
-    @Override
     public void deplacement(char dir, Labyrinth laby) {
         switch (dir){
             case 'N' :
