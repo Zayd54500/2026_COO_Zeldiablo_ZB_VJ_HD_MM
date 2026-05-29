@@ -1,5 +1,5 @@
 package main;
-
+import static org.junit;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -16,5 +16,4 @@ class MainTest {
         // verifications
         assertEquals(val,1,"devrait etre egal à 1");
     }
-
 }
