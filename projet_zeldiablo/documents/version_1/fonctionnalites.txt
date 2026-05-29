@@ -12,19 +12,7 @@ Le critère doit juste être fonctionnel et simple pour l'instant
     - Critère 3 : Le joueur ne peut pas sortir des limites de la carte
     - Critère 4 : Déplacement visible et vérifiable dans le programme
 
-- Fonctionnalité 2 :Attaquer
-Description :
-Le joueur peut attaquer un ennemi quand il est à sa portée
-Quand le joueur attaque, la vie de l'ennemi baisse
-Pour l'instant on doit avoir une attaque simple qui marche et qui permet de verifier l'interaction entre ennemi et joueur
-
-- critères de validation :
-    - critère 1 : le joueur peut lancer une attaque.
-    - critère 2 : l'attaque touche uniquement un ennemi valide, par exemple un ennemi proche ou à portée.
-    - critère 3 : les points de vie de l'ennemi diminuent après une attaque réussie.
-    - critère 4 : si les points de vie de l'ennemi atteignent 0, l'ennemi est considéré comme vaincu
-
-- Fonctionnalité 3 : Création de labyrinthe
+- Fonctionnalité 2 : Création de labyrinthe
 Description :
 Création d'un labyrnthe sour la forme de grille, chaque case de la grille peut soit être un mur
 soit un chemin accessible
@@ -36,7 +24,7 @@ Le joueur doit apparaitre dans une case de départ, puis se déplacer unniquemen
     - critère 3 : Il existe au moins un chemin possible entre le départ et l'arrivé
     - critère 4 : Le joueur ne peut pas pas traverser les murs ni sortir des limites du labyrinthe
 
-- Fonctionnalité 4 : Afficher avec un moteur :
+- Fonctionnalité 3 : Afficher avec un moteur :
 Description :
 Le moteur d’affichage permet de représenter visuellement les éléments du jeu
 Il affiche le labyrinthe, le joueur, les murs, les chemins et éventuellement la sortie ou les objectifs

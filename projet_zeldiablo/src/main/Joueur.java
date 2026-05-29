@@ -31,21 +31,4 @@ public class Joueur implements Personnage{
                 }
         }
     }
-
-    public boolean etreMort() {
-        if (vie == 0) {
-            return true;
-        }
-        return false;
-    }
-
-    public void subirDegat(int degats){
-        this.vie = this.vie - degats;
-    }
-
-    public void attaquer(Personnage cible) {
-        if(!cible.etreMort()) {
-            cible.subirDegat(this.degats);
-        }
-    }
 }
