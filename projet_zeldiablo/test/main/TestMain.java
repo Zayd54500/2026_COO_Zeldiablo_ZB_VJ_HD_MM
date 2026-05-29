@@ -1,11 +1,10 @@
 package main;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.Assert.assertEquals;
 
-class MainTest {
-
+public class TestMain {
     @Test
     // verification que retour retourne bien 1
     public void testRetour() {
@@ -14,7 +13,7 @@ class MainTest {
         // appel de la methode
         int val = m.retour();
         // verifications
-        assertEquals(val,1,"devrait etre egal à 1");
+        assertEquals("devrait etre egal à 1", 1, val);
     }
 
 }
