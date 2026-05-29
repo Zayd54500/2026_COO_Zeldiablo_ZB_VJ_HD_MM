@@ -14,19 +14,19 @@ public class Joueur implements Personnage{
     public void deplacement(char dir, Labyrinth laby) {
         switch (dir){
             case 'N' :
-                if(laby.getCase(this.posX+1, this.posY).etreTraversable()){
-                    this.posX+=1;
-                }
-            case 'S' :
-                if(laby.getCase(this.posX-1, this.posY).etreTraversable()){
+                if(this.posX>0){
                     this.posX-=1;
                 }
+            case 'S' :
+                if(this.posX<laby.getTailleX()){
+                    this.posX+=1;
+                }
             case 'O' :
-                if(laby.getCase(this.posX, this.posY-1).etreTraversable()){
+                if(this.posY>0){
                     this.posY-=1;
                 }
             case 'E' :
-                if(laby.getCase(this.posX, this.posY+1).etreTraversable()){
+                if(this.posY<laby.getTailleY()){
                     this.posY+=1;
                 }
         }

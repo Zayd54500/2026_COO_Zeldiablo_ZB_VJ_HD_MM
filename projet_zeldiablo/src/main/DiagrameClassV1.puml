@@ -18,7 +18,6 @@ class Mur implements Case {
 }
 
 class Labyrinth {
-- listeCase : ArrayList
 + getListeCase() : ArrayList
 + getCase(x: int, y: int) : Case
 }

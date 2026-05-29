@@ -3,11 +3,16 @@ package main;
 import java.util.ArrayList;
 
 public class Labyrinth {
-    private ArrayList<ArrayList<Case>> listeCase;
-    public Labyrinth(ArrayList<ArrayList<Case>> cases){
-        this.listeCase = cases;
+    private int tailleX;
+    private int tailleY;
+    public Labyrinth(){
+        this.tailleX = 5;
+        this.tailleY = 6;
     }
-    public Case getCase(int x, int y){
-        return listeCase.get(x).get(y);
+    public int getTailleX(){
+        return this.tailleX;
+    }
+    public int getTailleY(){
+        return this.tailleY;
     }
 }
