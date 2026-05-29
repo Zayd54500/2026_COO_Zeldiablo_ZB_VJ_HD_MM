@@ -1,0 +1,43 @@
+@startuml
+'https://plantuml.com/class-diagram
+class Jeu{
+
+}
+class Mur{
+- x : int
+- y : int
++ etreTraversable() : boolean
++ getX() : int
++ getY() : int    
+}
+class Vide{
+- x : int
+- y : int
++ etreTraversable() : boolean
++ getX() : int
++ getY() : int    
+}
+class Piege{
+- x : int
+- y : int
++ etreTraversable() : boolean
++ getX() : int
++ getY() : int    
+}
+interface Personnage {
++ deplacement(dir: char, laby: Labyrinth)
+}
+
+class Labyrinth {
++ Labyrinth()
+}
+
+class Joueur implements Personnage {
+- posX : int
+- posY : int
++ deplacement(dir: char, laby: Labyrinth)
+}
+
+Jeu -> "1" Labyrinth : -laby
+Jeu -> "1" Personnage : -pj
+@enduml
