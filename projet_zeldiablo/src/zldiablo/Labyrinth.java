@@ -1,41 +1,33 @@
-import java.io.IOExeption;
+package zldiablo;
+
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
-
-package zldiablo;
-
 
 public class Labyrinth {
     private Case[][] grille;
     private int tailleX;
     private int tailleY;
 
-    public Labyrinth(){
-        try{
-        List<String> lignes = Files.readAllLines(Paths.get("date/labyrinthe.txt"));
+    public Labyrinth() throws IOException {
+        List<String> lignes = Files.readAllLines(Paths.get("data/laby.txt"));
 
         this.tailleY = lignes.size();
         this.tailleX = lignes.get(0).length();
         this.grille = new Case[this.tailleY][this.tailleX];
-        for (int y = 0;, y < this.tailleY; y++){
+        for (int y = 0; y < this.tailleY; y++){
             String ligne = lignes.get(y);
-        for (int x = 0; x < this.tailleX; x++){
-            char caractere = ligne.charAt(x);
-        if (caractere == '#'){
-            this.grille[y][x] = new Mur();
-        }else if (caractere== '.'){
-            this.grille[y][x] = new Casevide();
-        }
-        }
-        }
-        } catch(IOExeption e){
-            System.out.println("Erreur: impossible de lire le fichier labyrinthe.txt");
-
-        }
+            for (int x = 0; x < this.tailleX; x++){
+                char caractere = ligne.charAt(x);
+                if (caractere == '#'){
+                    this.grille[y][x] = new Mur();
+                } else if (caractere== '.') {
+                    this.grille[y][x] = new CaseVide();
+                }
+            }
         }
     }
-
 
 
     public int getTailleX(){
