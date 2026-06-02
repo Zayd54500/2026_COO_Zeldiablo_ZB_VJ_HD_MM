@@ -12,8 +12,17 @@ public class DessinJeu implements moteurJeu.DessinJeu {
     public void dessiner(BufferedImage image) {
         Graphics2D g = (Graphics2D) image.getGraphics();
         Personnage joueur = jeu.getJoueur();
-        g.fillRect(joueur.getPosX()*10, joueur.getPosY()*10, 10, 10);
+        Labyrinth laby = jeu.getLaby();
+        for(int i = 0; i<laby.getTailleY(); i++){
+            for(int j = 0; j<laby.getTailleX(); j++){
+                if(laby.getCase(i, j).getNom().equals("mur")){
+                    g.setColor(Color.gray);
+                    g.fillRect(j*50, i*50, 50, 50);
+                }
+            }
+        }
         g.setColor(Color.blue);
+        g.fillRect(joueur.getPosX()*50, joueur.getPosY()*50, 50, 50);
         g.dispose();
     }
 }
