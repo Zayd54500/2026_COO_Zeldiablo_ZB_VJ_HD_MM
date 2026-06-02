@@ -28,7 +28,6 @@ public class Labyrinth {
         }
     }
 
-
     public int getTailleX(){
         return this.tailleX;
     }
@@ -36,6 +35,6 @@ public class Labyrinth {
         return this.tailleY;
     }
     public Case getCase(int x, int y) {
-        return this.grille[x][y];
+        return this.grille[y][x];
     }
 }

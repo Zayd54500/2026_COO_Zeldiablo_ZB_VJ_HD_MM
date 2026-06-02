@@ -15,7 +15,7 @@ public class DessinJeu implements moteurJeu.DessinJeu {
         Labyrinth laby = jeu.getLaby();
         for(int i = 0; i<laby.getTailleY(); i++){
             for(int j = 0; j<laby.getTailleX(); j++){
-                if(laby.getCase(i, j).getNom().equals("mur")){
+                if(laby.getCase(j, i).getNom().equals("mur")){
                     g.setColor(Color.gray);
                     g.fillRect(j*50, i*50, 50, 50);
                 }
