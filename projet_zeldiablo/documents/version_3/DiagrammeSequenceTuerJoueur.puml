@@ -1,23 +1,13 @@
 @startuml
-hide footbox
 
-participant "Jeu / Piège" as Jeu
+participant "Piège" as Jeu
 participant "Joueur" as J
 participant "Interface" as UI
-
-' Le joueur prend un coup fatal
-Jeu -> J : subirDegats() [vie tombe à 0]
-
-' Critère 1 : Passage à l'état mort
-J -> J : statut = "mort"
-
-' Critère 3 : Fin de partie
+Jeu -> J : subirDegats()
+J -> J : mort = true
 J -> UI : afficherGameOver()
-
-|||
-
-' Critère 2 : Tentative d'action bloquée
+UI -> J
 Jeu -> J : deplacement()
-J --> Jeu : action ignorée (car mort)
+J -> Jeu : action ignorée (car mort)
 
 @enduml

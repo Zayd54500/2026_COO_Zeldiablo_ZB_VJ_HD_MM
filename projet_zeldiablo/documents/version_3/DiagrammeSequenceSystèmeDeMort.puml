@@ -1,15 +1,10 @@
 @startuml
-'https://plantuml.com/sequence-diagram
-
-autonumber
-
-== Initialization ==
-
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
-
-== Repetition ==
-
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+participant "jeu" as jeu
+participant "joueur" as pj
+-> jeu : evoluer(Commande c)
+jeu -> pj : etreMort()
+pj -> jeu : mort
+alt mort == true
+    <- jeu : finDeJeu
+    end
 @enduml
