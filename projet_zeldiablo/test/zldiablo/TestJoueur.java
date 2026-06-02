@@ -96,4 +96,38 @@ public class TestJoueur {
         assertEquals("Le joueur ne doit pas traverser le mur intérieur", 9, joueur.getPosX());
         assertEquals("Le joueur ne doit pas traverser le mur intérieur", 1, joueur.getPosY());
     }
+
+    @Test
+    public void testJoueurNePasTraverserMurHaut() throws IOException {
+        Labyrinth laby = new Labyrinth();
+        Joueur joueur = new Joueur();
+
+        joueur.deplacement('N', laby);
+
+        assertEquals("Le joueur ne doit pas traverser le mur du haut", 1, joueur.getPosX());
+        assertEquals("Le joueur ne doit pas traverser le mur du haut", 1, joueur.getPosY());
+    }
+
+    @Test
+    public void testJoueurNePasTraverserMurGauche() throws IOException {
+        Labyrinth laby = new Labyrinth();
+        Joueur joueur = new Joueur();
+
+        joueur.deplacement('O', laby);
+
+        assertEquals("Le joueur ne doit pas traverser le mur de gauche", 1, joueur.getPosX());
+        assertEquals("Le joueur ne doit pas traverser le mur de gauche", 1, joueur.getPosY());
+    }
+
+    @Test
+    public void testDirectionInconnueNeBougePasLeJoueur() throws IOException {
+        Labyrinth laby = new Labyrinth();
+        Joueur joueur = new Joueur();
+
+        joueur.deplacement('X', laby);
+
+        assertEquals("Une direction inconnue ne doit pas modifier X", 1, joueur.getPosX());
+        assertEquals("Une direction inconnue ne doit pas modifier Y", 1, joueur.getPosY());
+    }
+
 }

@@ -68,6 +68,4 @@ public class TestJeu {
         assertFalse("Le jeu ne doit pas être fini au début/lancement", jeu.etreFini());
     }
 
-
-
 }
