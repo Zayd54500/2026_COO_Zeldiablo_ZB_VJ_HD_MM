@@ -20,6 +20,10 @@ class Vide implements Case{
 + etreTraversable() : boolean
 + getNom() : String
 }
+class Piege implements Case {
++etreTraversable() : boolean
++getNom() : String
+}
 interface Personnage {
 + deplacement(dir: char, laby: Labyrinth)
 + getX() : int
