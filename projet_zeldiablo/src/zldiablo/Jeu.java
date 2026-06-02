@@ -3,12 +3,18 @@ package zldiablo;
 import moteurJeu.Commande;
 
 import java.io.File;
+import java.io.IOException;
 
 public class Jeu implements moteurJeu.Jeu {
     private Labyrinth laby;
     private Personnage joueur;
-    public Jeu(String nomLaby){
-        this.laby = new Labyrinth(nomLaby);
+    public Jeu(){
+        try {
+            this.laby = new Labyrinth();
+        }
+        catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         this.joueur = new Joueur();
     }
     @Override
