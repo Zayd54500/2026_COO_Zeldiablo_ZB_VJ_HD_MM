@@ -2,7 +2,7 @@
 hide footbox
 skinparam style strictuml
 
-participant ":Joueur" as J
+participant "j : Joueur" as J
 participant "laby : Labyrinth" as L
 participant "case_cible : Case" as C
 
@@ -12,10 +12,8 @@ alt dir == 'N'
     alt this.posY > 0
         J -> L : getCase(this.posX, this.posY-1)
         L -> J : case_cible
-        
         J -> C : etreTraversable()
         C -> J : true
-        
         J -> J : this.posY -= 1
     end
     
