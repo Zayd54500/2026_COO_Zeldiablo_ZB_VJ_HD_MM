@@ -1,0 +1,11 @@
+- Fonctionnalité : piege (itération 3):
+Description :
+Le moteur affiche une case qui se fond partiellement avec le fond de l'image
+de façon à ce qu'il soit peu visible.
+Le joueur, lorsqu'il marche dessus, subis des dégats et le piège se désactive
+
+- critère de validation :
+    - critère 1 : Le joueur doit pouvoir marcher dessus
+    - critère 2 : Le piège doit pouvoir s'activer lorsque le joueur passe dessus
+    - critère 3 : Le piège doit infliger des dégats et se désactiver lorsque le joueur marche dessus
+

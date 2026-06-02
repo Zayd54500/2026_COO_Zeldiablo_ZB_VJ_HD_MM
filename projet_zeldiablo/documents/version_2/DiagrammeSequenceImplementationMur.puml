@@ -1,0 +1,10 @@
+@startuml
+participant "jeu" as jeu
+participant "labyrinth" as laby
+participant "mur" as mur
+jeu -> laby : new Labyrinth(laby.txt)
+create mur
+laby -> mur : ArrayList<Case>
+laby -> jeu : Labyrinth
+
+@enduml

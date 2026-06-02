@@ -1,0 +1,7 @@
+@startuml
+title Fonctionalité 2 : ne pas etre traversable
+participant "mur" as mur
+-> mur : etreTraversable()
+<- mur : false
+
+@enduml

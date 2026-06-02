@@ -2,11 +2,13 @@ package zldiablo;
 
 import moteurJeu.Commande;
 
+import java.io.File;
+
 public class Jeu implements moteurJeu.Jeu {
     private Labyrinth laby;
     private Personnage joueur;
-    public Jeu(){
-        this.laby = new Labyrinth();
+    public Jeu(String nomLaby){
+        this.laby = new Labyrinth(nomLaby);
         this.joueur = new Joueur();
     }
     @Override
