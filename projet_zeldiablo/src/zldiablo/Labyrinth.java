@@ -11,7 +11,7 @@ public class Labyrinth {
     private int tailleY;
 
     public Labyrinth() throws IOException {
-        List<String> lignes = Files.readAllLines(Paths.get("src/data/laby2.txt"));
+        List<String> lignes = Files.readAllLines(Paths.get("src/data/laby.txt"));
         this.tailleY = lignes.size();
         this.tailleX = lignes.get(0).length();
         this.grille = new Case[this.tailleY][this.tailleX];
