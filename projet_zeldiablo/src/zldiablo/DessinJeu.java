@@ -14,5 +14,6 @@ public class DessinJeu implements moteurJeu.DessinJeu {
         Personnage joueur = jeu.getJoueur();
         g.fillRect(joueur.getPosX()*10, joueur.getPosY()*10, 10, 10);
         g.setColor(Color.blue);
+        g.dispose();
     }
 }
