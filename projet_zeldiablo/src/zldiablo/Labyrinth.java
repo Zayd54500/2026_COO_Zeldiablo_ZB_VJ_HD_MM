@@ -1,16 +1,19 @@
 package zldiablo;
 
 public class Labyrinth {
+    private Case[][] grille;
     private int tailleX;
     private int tailleY;
-    public Labyrinth(){
-        this.tailleX = 5;
-        this.tailleY = 6;
-    }
+
+
+
     public int getTailleX(){
         return this.tailleX;
     }
     public int getTailleY(){
         return this.tailleY;
+    }
+    public Case getCase(int x, int y) {
+        return this.grille[x][y];
     }
 }
