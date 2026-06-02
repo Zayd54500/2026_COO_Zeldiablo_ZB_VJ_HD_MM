@@ -1,11 +1,39 @@
-- Fonctionnalité : piege (itération 3):
+Fonctionnalité version 3
+
+Fonctionnalité 1 : implémentation Piège :
 Description :
-Le moteur affiche une case qui se fond partiellement avec le fond de l'image
-de façon à ce qu'il soit peu visible.
-Le joueur, lorsqu'il marche dessus, subis des dégats et le piège se désactive
+Le moteur génère et affiche des pièges sur la carte du jeu. Ces pièges sont des éléments destinés à représenter un danger pour le joueur.
 
-- critère de validation :
-    - critère 1 : Le joueur doit pouvoir marcher dessus
-    - critère 2 : Le piège doit pouvoir s'activer lorsque le joueur passe dessus
-    - critère 3 : Le piège doit infliger des dégats et se désactiver lorsque le joueur marche dessus
+critère de validation :
 
+critère 1 : Les pièges doivent être affichés correctement sur la carte.
+
+critère 2 : Les pièges doivent être visuellement différenciables des cases libres et des murs.
+
+critère 3 : la case d'un piège est considérée comme "traversable" (le joueur peut aller dessus).
+
+critère 4 : Le joueur ne doit pas pouvoir spawn directement sur un piège au début de la partie.
+
+Fonctionnalité 2 : Le piège tue le joueur :
+Description :
+Les pièges sont mortels. Si le joueur décide de se déplacer sur une case contenant un piège, ce dernier s'active et tue le joueur
+
+critère de validation :
+
+critère 1 : Le joueur doit pouvoir se déplacer sur la case du piège sans être bloqué (la méthode de déplacement l'autorise).
+
+critère 2 : Dès que les coordonnées du joueur sont identiques à celles du piège, l'événement de dégâts se déclenche.
+
+critère 3 : La vie du joueur passe à 0 suite au déclenchement du piège.
+
+Fonctionnalité : Système de mort pour le joueur :
+Description :
+Un état de mort est géré par le jeu lorsque les points de vie du joueur tombent à 0. Cet état empêche le joueur de continuer à jouer et déclenche la fin de la partie (ou de l'essai).
+
+critère de validation :
+
+critère 1 : Lorsque la vie du joueur atteint 0, son statut passe à "mort".
+
+critère 2 : Un joueur mort ne peut plus effectuer aucune action (le déplacement est désactivé).
+
+critère 3 : Un événement de fin de partie (ex: affichage d'un message "Game Over", proposition de recommencer) est déclenché sur l'interface.
