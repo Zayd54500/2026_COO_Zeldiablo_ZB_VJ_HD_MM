@@ -2,20 +2,16 @@
 skinparam style strictuml
 skinparam SequenceMessageAlign center
 
-actor "Appelant" as Actor
 participant ":Joueur" as J
 participant "laby : Labyrinth" as L
 participant "case_cible : Case" as C
 
 Actor -> J : deplacement(dir, laby)
-activate J
 
 alt dir == 'N'
     opt this.posY > 0
         J -> L : getCase(this.posX, this.posY-1)
-        activate L
         L --> J : case_cible
-        deactivate L
         
         J -> C : etreTraversable()
         activate C
@@ -29,15 +25,11 @@ alt dir == 'N'
 
 else dir == 'S'
     J -> L : getTailleY()
-    activate L
     L --> J : tailleY
-    deactivate L
 
     opt this.posY < tailleY - 1
         J -> L : getCase(this.posX, this.posY+1)
-        activate L
         L --> J : case_cible
-        deactivate L
         
         J -> C : etreTraversable()
         activate C
