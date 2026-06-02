@@ -2,18 +2,18 @@
 participant "jeuDessin" as dessin
 participant "jeu" as jeu
 participant "labyrinth" as laby
-participant "mur" as mur
+participant "piege" as piege
 dessin -> jeu : jeu.getLaby()
 jeu -> laby : new Labyrinth(laby.txt)
-create mur
-laby -> mur : Case[][]
+create piege
+laby -> piege : Case[][]
 laby -> jeu : Labyrinth
 jeu -> dessin : Labyrinth
 loop 20 fois
     loop 20 fois
         dessin -> laby : getCase(i, j)
-        alt case.getNom() == "mur"
-            dessin -> dessin : .setColor(Color.gray)
+        alt case.getNom() == "piege"
+            dessin -> dessin : .setColor(Color.yellow)
             dessin -> dessin : .fillRect()
        end
     end

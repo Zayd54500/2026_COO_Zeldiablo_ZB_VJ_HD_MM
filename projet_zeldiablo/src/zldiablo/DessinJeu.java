@@ -17,7 +17,6 @@ public class DessinJeu implements moteurJeu.DessinJeu {
         Labyrinth laby = jeu.getLaby();
         int tailleCaseX = largeurDispo / laby.getTailleX();
         int tailleCaseY = hauteurDisponible / laby.getTailleY();
-        int tailleCase = Math.min(tailleCaseX, tailleCaseY);
 
         for(int i = 0; i<laby.getTailleY(); i++){
             for(int j = 0; j<laby.getTailleX(); j++){
