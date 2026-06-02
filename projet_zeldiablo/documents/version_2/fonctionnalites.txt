@@ -1,12 +1,23 @@
 * Fonctionnalité version 2
 
-- Fonctionnalité : mur :
+- Fonctionnalité : implémentation Mur :
 Description :
-Le moteur affiche un carré de couleur différente afin de représenter un mur,
-le joueur ne pas marcher sur ce carré et ne peux pas le traverser (ça vaut aussi pour les attaques)
+Le moteur affiche des murs sur la carte du jeu afin de former les limites du niveau ou un labyrinthe
 
 - critère de validation :
-    - critère 1 : Ne doit pas être traversable
-    - critère 2 : Le joueur ne doit pas pouvoir apparaître sur un mur
-    - critère 3 : Le joueur ne doit pas pouvoir attaques au travers
+    - critère 1 : Murs doivent être affiché correctement sur la carte
+    - critère 2 : Les murs doivent être visuellement différenciable des cases libre
+    - critère 3 : Les murs doivent permettre de former une map/un labyrinthe
+    - critère 4 : le joueur ne doit pas pouvoir spawn dessu
+
+- Fonctionnalité : les murs ne doivent pas être traversable :
+Description :
+Le joueur ne doit pas pouvoir traverser les murs, les murs deviennet donc une barrière physique
+et visuel pour le joueur
+Quand un joueur essaye de se déplacer dans un mur, il est bloquer et reste sur la même case
+
+- critère de validation :
+    - critère 1 : Le joueur ne doit pas pouvoir traverser le mur
+    - critère 2 : Si le joueur essaye d'aller sur le mur il est bloqué sur sa case
+    - critère 3 : Le déplacement vers des cases libres doivent toujours fonctionner
 
