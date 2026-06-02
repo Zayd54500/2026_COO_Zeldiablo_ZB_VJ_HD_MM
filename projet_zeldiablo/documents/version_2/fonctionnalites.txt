@@ -1,23 +1,23 @@
 * Fonctionnalité version 2
 
-- Fonctionnalité : mur :
+- Fonctionnalité : implémentation Mur :
 Description :
-Le moteur affiche un carré de couleur différente afin de représenter un mur,
-le joueur ne pas marcher sur ce carré et ne peux pas le traverser (ça vaut aussi pour les attaques)
+Le moteur affiche des murs sur la carte du jeu afin de former les limites du niveau ou un labyrinthe
 
 - critère de validation :
-    - critère 1 : Ne doit pas être traversable
-    - critère 2 : Le joueur ne doit pas pouvoir apparaître sur un mur
-    - critère 3 : Le joueur ne doit pas pouvoir attaques au travers
+    - critère 1 : Murs doivent être affiché correctement sur la carte
+    - critère 2 : Les murs doivent être visuellement différenciable des cases libre
+    - critère 3 : Les murs doivent permettre de former une map/un labyrinthe
+    - critère 4 : le joueur ne doit pas pouvoir spawn dessu
 
-- Fonctionnalité : piege :
+- Fonctionnalité : les murs ne doivent pas être traversable :
 Description :
-Le moteur affiche une case qui se fond partiellement avec le fond de l'image
-de façon à ce qu'il soit peu visible.
-Le joueur, lorsqu'il marche dessus, subis des dégats et le piège se désactive
+Le joueur ne doit pas pouvoir traverser les murs, les murs deviennet donc une barrière physique
+et visuel pour le joueur
+Quand un joueur essaye de se déplacer dans un mur, il est bloquer et reste sur la même case
 
 - critère de validation :
-    - critère 1 : Le joueur doit pouvoir marcher dessus
-    - critère 2 : Le piège doit pouvoir s'activer lorsque le joueur passe dessus
-    - critère 3 : Le piège doit infliger des dégats et se désactiver lorsque le joueur marche dessus
+    - critère 1 : Le joueur ne doit pas pouvoir traverser le mur
+    - critère 2 : Si le joueur essaye d'aller sur le mur il est bloqué sur sa case
+    - critère 3 : Le déplacement vers des cases libres doivent toujours fonctionner
 
