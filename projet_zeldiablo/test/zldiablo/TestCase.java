@@ -7,7 +7,7 @@ public class TestCase {
 
 @Test
 public void testCaseVidetraversable(){
-    CaseVide caseVide = new Case Vide();
+    CaseVide caseVide = new CaseVide();
 
 assertTrue("Une case vide doit être traversable", caseVide.etreTraversable());
 }
