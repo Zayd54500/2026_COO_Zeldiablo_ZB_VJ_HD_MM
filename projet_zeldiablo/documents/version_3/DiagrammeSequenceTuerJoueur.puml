@@ -1,15 +1,23 @@
 @startuml
-'https://plantuml.com/sequence-diagram
+hide footbox
 
-autonumber
+participant "Jeu / Piège" as Jeu
+participant "Joueur" as J
+participant "Interface" as UI
 
-== Initialization ==
+' Le joueur prend un coup fatal
+Jeu -> J : subirDegats() [vie tombe à 0]
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+' Critère 1 : Passage à l'état mort
+J -> J : statut = "mort"
 
-== Repetition ==
+' Critère 3 : Fin de partie
+J -> UI : afficherGameOver()
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+|||
+
+' Critère 2 : Tentative d'action bloquée
+Jeu -> J : deplacement()
+J --> Jeu : action ignorée (car mort)
+
 @enduml
