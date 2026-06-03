@@ -1,25 +1,23 @@
 @startuml
-hide footbox
-skinparam style strictuml
 
-participant "MoteurJeu" as Moteur
-participant "laby : Labyrinth" as Laby
-participant "case : Case" as C
+participant "dessinJeu" as dessin
+participant "labyrinth" as laby
+participant "piece" as p
+-> dessin : dessiner()
+activate dessin
+loop laby.getTaille()
+    dessin -> laby : getCase()
+    activate laby
+    laby --> dessin : piece
+    deactivate laby
+    dessin -> p : case.getPris()
+    activate p
+    p --> dessin : false
+    deactivate p
 
-Moteur -> Laby : genererPieces()
-activate Laby
-
-loop Pour chaque pièce à placer
-    Laby -> Laby : coord = getCoordonneesAleatoires()
-    Laby -> C : getType()
-    C --> Laby : typeActuel
-    
-    alt typeActuel == LIBRE && coord != spawnJoueur
-        note right of C : Critères 1, 3 et 4
-        Laby -> C : setType('PIECE')
-        Laby -> C : setTraversable(true)
-    end
+    dessin -> dessin : .fillOval()
 end
+<-- dessin
+deactivate laby
 
-deactivate Laby
 @enduml

@@ -1,29 +1,23 @@
 @startuml
-hide footbox
-skinparam style strictuml
 
-actor "Appelant" as Actor
-participant ":Joueur" as J
-participant "laby : Labyrinth" as Laby
-participant "case_cible : Case" as C
+participant "joueur" as j
+participant "labyrinth" as l
+participant "piece" as p
+-> j : deplacement()
+activate j
+j -> l : getNom()
+activate l
+l--> j : 'c'
+deactivate l
+j -> p : getPris()
+activate p
+p --> j : false
+deactivate p
+j -> j : augmenterScore()
+j -> p : etrePris()
+activate p
+p --> j
+deactivate p
+<-- j
 
-Actor -> J : deplacement(dir, laby)
-activate J
-
-J -> Laby : getCase(nouvelleX, nouvelleY)
-Laby --> J : case_cible
-
-alt case_cible.getType() == 'PIECE'
-    note right of J : Critères 2 et 3
-    J -> J : this.score += 1
-    
-    note right of C : La pièce disparait
-    J -> C : setType('LIBRE') 
-end
-
-note right of J : Critère 1 : le joueur n'est pas bloqué
-J -> J : miseAjourPosition()
-
-J --> Actor : return
-deactivate J
 @enduml
