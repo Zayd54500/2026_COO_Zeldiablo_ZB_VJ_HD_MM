@@ -34,6 +34,9 @@ public class Joueur implements Personnage{
                 }
                 break;
         }
+        if(laby.getCase(this.posX, this.posY).getNom()=='p'){
+            this.subirDegats(1);
+        }
     }
 
     public void subirDegats(int degats) {
