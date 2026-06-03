@@ -42,6 +42,10 @@ public class DessinJeu implements moteurJeu.DessinJeu {
         g.fillRect(joueur.getPosX()*tailleCaseX, joueur.getPosY()*tailleCaseY, tailleCaseX, tailleCaseY);
         g.setColor(Color.RED);
         g.drawString("Vie : "+joueur.getVie(), 40, 20);
+        if (joueur.estMort()) {
+            g.setColor(Color.red);
+            g.drawString("GameOver", 230,275);
+        }
         g.dispose();
     }
 }

@@ -6,7 +6,7 @@ public class Joueur implements Personnage{
     private int vie;
     private int degats;
     public Joueur(){
-        this.vie = 100;
+        this.vie = 3;
         this.posX = 1;
         this.posY = 1;
     }
