@@ -77,4 +77,7 @@ public class Joueur implements Personnage{
     public int getPosY(){
         return this.posY;
     }
+    public int getScore(){
+        return this.score;
+    }
 }
