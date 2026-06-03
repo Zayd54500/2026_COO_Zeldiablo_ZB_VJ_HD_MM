@@ -13,17 +13,22 @@ j -> l : activerSortie()
 activate l
 l --> j
 deactivate l
-j -> l : estUneSortieActive()
+j -> pj : getX()
+activate pj
+pj-->j:x
+deactivate pj
+j -> pj : getY()
+activate pj
+pj-->j:y
+deactivate pj
+j -> l : estUneSortieActive(x, y)
 activate l
-l -> pj : getX()
-activate pj
-pj --> l : x
-deactivate pj
-l -> pj : getY()
-activate pj
-pj --> l : y
-deactivate pj
+l -> s : etreActive()
+activate s
+s --> l : true
+deactivate s
 l --> j : true
+deactivate l
 <-- j
 deactivate l
 deactivate j
