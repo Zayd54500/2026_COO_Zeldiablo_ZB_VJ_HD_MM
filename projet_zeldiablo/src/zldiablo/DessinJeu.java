@@ -45,6 +45,14 @@ public class DessinJeu implements moteurJeu.DessinJeu {
                                 tailleCaseX,
                                 tailleCaseY
                                 );
+                    } else {
+                        g.setColor(new Color(101, 67, 33));
+                        g.fillRect(
+                                j * tailleCaseX,
+                                i * tailleCaseY,
+                                tailleCaseX,
+                                tailleCaseY
+                        );
                     }
                 }
             }
