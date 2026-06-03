@@ -10,19 +10,19 @@ class Jeu{
 }
 interface Case{
 + etreTraversable() : boolean
-+ getNom() : String
++ getNom() : char
 }
 class Mur implements Case{
 + etreTraversable() : boolean
-+ getNom() : String
++ getNom() : char
 }
 class Vide implements Case{
 + etreTraversable() : boolean
-+ getNom() : String
++ getNom() : char
 }
 class Piege implements Case {
 +etreTraversable() : boolean
-+getNom() : String
++getNom() : char
 }
 interface Personnage {
 + deplacement(dir: char, laby: Labyrinth)
@@ -47,6 +47,10 @@ class Joueur implements Personnage {
 + subirDegat(degat : int)
 + getVie() : int
 + etreMort() : boolean
+}
+class Piece implements Case{
++ etreTraversable() : boolean
++getNom() : char
 }
 DessinJeu -> "1" Jeu : -jeu
 Jeu -> "1" Labyrinth : -laby
