@@ -49,7 +49,8 @@ public class DessinJeu implements moteurJeu.DessinJeu {
 
         g.fillRect(joueur.getPosX()*tailleCaseX, joueur.getPosY()*tailleCaseY, tailleCaseX, tailleCaseY);
         g.setColor(Color.RED);
-        g.drawString("Vie : "+joueur.getVie(), 40, 20);
+        g.drawString("VIE : "+joueur.getVie(), 40, 20);
+        g.drawString("SCORE : " + joueur.getScore(), 100, 20);
         if (joueur.estMort()) {
             Font fonte = new Font(" TimesRoman ",Font.BOLD,30);
             g.setFont(fonte);
