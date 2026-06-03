@@ -18,7 +18,6 @@ public class DessinJeu implements moteurJeu.DessinJeu {
         int tailleCaseX = largeurDispo / laby.getTailleX();
         int tailleCaseY = hauteurDisponible / laby.getTailleY();
 
-        g.drawString("Vie :" + joueur.get, 200, 200);
         for(int i = 0; i<laby.getTailleY(); i++){
             for(int j = 0; j<laby.getTailleX(); j++){
                 if(laby.getCase(j, i).getNom()=='m'){

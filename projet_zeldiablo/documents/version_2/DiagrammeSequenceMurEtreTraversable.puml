@@ -7,15 +7,16 @@ participant "Labyrinth" as L
 participant "Case" as C
 
 -> J : deplacement(dir, laby)
-
-alt dir == 'N'
-    alt this.posY > 0
+note right
+    comme y>0
+end note
         J -> L : getCase(this.posX, this.posY-1)
         L -> J : case_cible
         J -> C : etreTraversable()
         C -> J : true
-        J -> J : this.posY -= 1
-    end
+note left
+    decrementation de y
+end note
     
 
 <- J : 

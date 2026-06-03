@@ -4,11 +4,14 @@ participant "jeu" as jeu
 participant "labyrinth" as laby
 participant "mur" as mur
 dessin -> jeu : jeu.getLaby()
+activate jeu
 jeu -> laby : new Labyrinth(laby.txt)
+
 create mur
 laby -> mur : Case[][]
 laby -> jeu : Labyrinth
-jeu -> dessin : Labyrinth
+jeu --> dessin : Labyrinth
+deactivate jeu
 loop 20 fois
     loop 20 fois
         dessin -> laby : getCase(i, j)

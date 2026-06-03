@@ -1,4 +1,5 @@
 @startuml
+title "Afficher un piege"
 participant "jeuDessin" as dessin
 participant "jeu" as jeu
 participant "labyrinth" as laby
