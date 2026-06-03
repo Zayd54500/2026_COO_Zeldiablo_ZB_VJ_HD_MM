@@ -26,7 +26,7 @@ public class Labyrinth {
                 } else if(caractere == 'P'){
                     this.grille[y][x] = new Piege();
                 } else if(caractere == 'C'){
-                    this.grille[y][x] = new Piege();
+                    this.grille[y][x] = new Piece();
                 }
             }
         }
