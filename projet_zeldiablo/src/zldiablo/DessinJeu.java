@@ -47,7 +47,7 @@ public class DessinJeu implements moteurJeu.DessinJeu {
                     g.setColor(Color.gray);
                     g.fillRect(j * tailleCaseX, i * tailleCaseY, tailleCaseX, tailleCaseY);
                 } else if (laby.getCase(j, i).getNom() == 'p') {
-                    g.setColor(Color.yellow);
+                    g.setColor(Color.magenta);
                     g.fillRect(j * tailleCaseX, i * tailleCaseY, tailleCaseX, tailleCaseY);
                 } else if (laby.getCase(j, i).getNom() == 'c'&&!laby.getCase(j, i).getPris()) {
                     g.setColor(Color.ORANGE);
