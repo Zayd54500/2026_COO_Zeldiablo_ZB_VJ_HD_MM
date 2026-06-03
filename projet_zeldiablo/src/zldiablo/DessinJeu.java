@@ -35,6 +35,17 @@ public class DessinJeu implements moteurJeu.DessinJeu {
                         tailleCaseX / 2,
                         tailleCaseY / 2
                     );
+                } else if (laby.getCase(j,i).getNom() == 's') {
+                    Sortie sortie = (Sortie) laby.getCase(j,i);
+                    if(sortie.estActive()) {
+                        g.setColor(Color.green);
+                        g.fillRect(
+                                j * tailleCaseX,
+                                i * tailleCaseY,
+                                tailleCaseX,
+                                tailleCaseY
+                                );
+                    }
                 }
             }
 
@@ -54,6 +65,13 @@ public class DessinJeu implements moteurJeu.DessinJeu {
             g.setFont(fonte);
             g.setColor(Color.red);
             g.drawString("GameOver", 190,250);
+        }
+
+        if (jeu.aGagne()) {
+            Font fonte = new Font(" TimesRoman ",Font.BOLD,30);
+            g.setFont(fonte);
+            g.setColor(Color.green);
+            g.drawString("You Win", 190,250);
         }
         g.dispose();
     }

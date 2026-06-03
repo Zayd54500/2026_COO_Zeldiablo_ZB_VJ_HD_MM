@@ -27,6 +27,8 @@ public class Labyrinth {
                     this.grille[y][x] = new Piege();
                 } else if(caractere == 'C'){
                     this.grille[y][x] = new Piece();
+                } else if (caractere == 'S') {
+                    this.grille[y][x] = new Sortie();
                 }
             }
         }
@@ -40,5 +42,24 @@ public class Labyrinth {
     }
     public Case getCase(int x, int y) {
         return this.grille[y][x];
+    }
+
+    public void activerSortie() {
+        for (int y = 0; y < this.tailleY; y++) {
+            for (int x = 0; x < this.tailleX; x++) {
+                if (this.grille[y][x] instanceof Sortie) {
+                    Sortie sortie = (Sortie) this.grille[y][x];
+                    sortie.activer();
+                }
+            }
+        }
+    }
+
+    public boolean estUneSortieActive(int x, int y) {
+        if (this.grille[y][x] instanceof Sortie) {
+            Sortie sortie = (Sortie) this.grille[y][x];
+            return sortie.estActive();
+        }
+        return false;
     }
 }
