@@ -27,8 +27,8 @@ l --> j : true
 <-- j
 deactivate l
 deactivate j
-activate j
 -> j : etreFinis()
+activate j
 <-- j : true
 deactivate j
 
