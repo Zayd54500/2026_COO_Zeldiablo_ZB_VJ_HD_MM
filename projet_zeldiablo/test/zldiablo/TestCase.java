@@ -16,7 +16,7 @@ public class TestCase {
     public void testCaseVideNom(){
         CaseVide caseVide = new CaseVide();
 
-        assertEquals("vide", caseVide.getNom());
+        assertEquals('v', caseVide.getNom());
     }
 
     @Test
@@ -30,7 +30,7 @@ public class TestCase {
     public void testMurNom(){
         Mur mur = new Mur();
 
-        assertEquals("mur", mur.getNom());
+        assertEquals('m', mur.getNom());
     }
 
 }

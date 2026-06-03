@@ -130,4 +130,52 @@ public class TestJoueur {
         assertEquals("Une direction inconnue ne doit pas modifier Y", 1, joueur.getPosY());
     }
 
+    @Test
+    public void testJoueurCommenceVivantAvecVie() {
+        Joueur joueur = new Joueur();
+
+        assertEquals("Le joueur doit commencer avec 3 points de vie", 3, joueur.getVie());
+        assertFalse("Le joueur ne doit pas être mort au départ", joueur.estMort());
+    }
+
+    @Test
+    public void testJoueurSubitDegats() {
+        Joueur joueur = new Joueur();
+
+        joueur.subirDegats(1);
+
+        assertEquals("Le joueur doit perdre 1 points de vie", 2, joueur.getVie());
+        assertFalse("Le joueur ne doit pas encore être mort", joueur.estMort());
+    }
+
+    @Test
+    public void testJoueurMeurtQuandVieAtteintZero() {
+        Joueur joueur = new Joueur();
+
+        joueur.subirDegats(3);
+
+        assertEquals("La vie ne doit pas descendre en dessou de 0", 0, joueur.getVie());
+    }
+
+    @Test
+    public void testVieNeDeviensPasNegative() {
+        Joueur joueur = new Joueur();
+
+        joueur.subirDegats(100);
+
+        assertEquals("La vie ne doit pas descendre en dessou de 0", 0, joueur.getVie());
+    }
+
+    @Test
+    public void testLeJoueurNeDoitPasSeDeplacerUneFoisMort() throws IOException {
+        Labyrinth laby = new Labyrinth();
+        Joueur joueur = new Joueur();
+
+        joueur.subirDegats(100);
+        joueur.deplacement('E', laby);
+
+        assertEquals("Un joueur mort ne doit pas changer de X", 2, joueur.getPosX());
+        assertEquals("Un joueur mort ne doit pas changer de Y", 1, joueur.getPosY());
+    }
+
 }
