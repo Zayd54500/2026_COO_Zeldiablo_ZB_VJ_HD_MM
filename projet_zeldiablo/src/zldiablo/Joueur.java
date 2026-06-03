@@ -6,11 +6,11 @@ public class Joueur implements Personnage{
     private int vie;
     private int degats;
     public Joueur(){
-        this.vie = 0;
-        this.degats = 0;
+        this.vie = 100;
         this.posX = 1;
         this.posY = 1;
     }
+
     public void deplacement(char dir, Labyrinth laby) {
         switch (dir){
             case 'N' :
@@ -35,6 +35,31 @@ public class Joueur implements Personnage{
                 break;
         }
     }
+
+    public void subirDegats(int degats) {
+        if (degats > 0) {
+            this.vie -= degats;
+            if (this.vie < 0) {
+                this.vie = 0;
+            }
+            System.out.println("Le joueur à subit " + degats + " degats");
+            if (this.estMort()) {
+                System.out.println("Le joueur est décédé");
+            }
+        }
+    }
+
+    public boolean estMort() {
+        if (this.vie <= 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public int getVie() {
+        return this.vie;
+    }
+
     public int getPosX(){
         return this.posX;
     }

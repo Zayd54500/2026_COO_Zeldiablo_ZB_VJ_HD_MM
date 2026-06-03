@@ -29,6 +29,7 @@ public class Jeu implements moteurJeu.Jeu {
             this.joueur.deplacement('O', this.laby);
         }
     }
+
     public Personnage getJoueur(){
         return this.joueur;
     }
@@ -37,6 +38,6 @@ public class Jeu implements moteurJeu.Jeu {
     }
     @Override
     public boolean etreFini() {
-        return false;
+        return this.joueur.estMort();
     }
 }
