@@ -1,10 +1,10 @@
 package zldiablo;
 
-public class Mur implements Case {
+public class Piege implements Case{
     public boolean etreTraversable(){
-        return false;
+        return true;
     }
     public char getNom(){
-        return 'm';
+        return 'p';
     }
 }

@@ -23,6 +23,8 @@ public class Labyrinth {
                     this.grille[y][x] = new Mur();
                 } else if (caractere== '.') {
                     this.grille[y][x] = new CaseVide();
+                } else if(caractere == 'P'){
+                    this.grille[y][x] = new Piege();
                 }
             }
         }
