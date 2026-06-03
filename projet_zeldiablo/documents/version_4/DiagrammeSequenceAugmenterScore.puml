@@ -1,15 +1,29 @@
 @startuml
-'https://plantuml.com/sequence-diagram
+hide footbox
+skinparam style strictuml
 
-autonumber
+actor "Appelant" as Actor
+participant ":Joueur" as J
+participant "laby : Labyrinth" as Laby
+participant "case_cible : Case" as C
 
-== Initialization ==
+Actor -> J : deplacement(dir, laby)
+activate J
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+J -> Laby : getCase(nouvelleX, nouvelleY)
+Laby --> J : case_cible
 
-== Repetition ==
+alt case_cible.getType() == 'PIECE'
+    note right of J : Critères 2 et 3
+    J -> J : this.score += 1
+    
+    note right of C : La pièce disparait
+    J -> C : setType('LIBRE') 
+end
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+note right of J : Critère 1 : le joueur n'est pas bloqué
+J -> J : miseAjourPosition()
+
+J --> Actor : return
+deactivate J
 @enduml

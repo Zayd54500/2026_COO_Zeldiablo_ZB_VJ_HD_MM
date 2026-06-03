@@ -1,15 +1,29 @@
 @startuml
-'https://plantuml.com/sequence-diagram
+hide footbox
+skinparam style strictuml
 
-autonumber
+participant "Joueur" as J
+participant "case_sortie : Case" as Sortie
+participant "InterfaceUI" as UI
 
-== Initialization ==
+J -> Sortie : tenterPassage()
+activate Sortie
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+Sortie -> J : getScore()
+J --> Sortie : scoreActuel
 
-== Repetition ==
+alt scoreActuel >= seuilRequis
+    note right of Sortie : Critère 1 : La sortie se débloque
+    Sortie -> UI : declencherVictoire()
+    activate UI
+    note right of UI : Critère 3 : Affichage du message
+    UI -> UI : afficherMessage("Victoire")
+    deactivate UI
+    
+else scoreActuel < seuilRequis
+    note right of Sortie : Critère 2 : Joueur bloqué (pas assez de score)
+    Sortie --> J : passageRefusé (reste sur la case)
+end
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+deactivate Sortie
 @enduml

@@ -1,15 +1,25 @@
 @startuml
-'https://plantuml.com/sequence-diagram
+hide footbox
+skinparam style strictuml
 
-autonumber
+participant "MoteurJeu" as Moteur
+participant "laby : Labyrinth" as Laby
+participant "case : Case" as C
 
-== Initialization ==
+Moteur -> Laby : genererPieces()
+activate Laby
 
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+loop Pour chaque pièce à placer
+    Laby -> Laby : coord = getCoordonneesAleatoires()
+    Laby -> C : getType()
+    C --> Laby : typeActuel
+    
+    alt typeActuel == LIBRE && coord != spawnJoueur
+        note right of C : Critères 1, 3 et 4
+        Laby -> C : setType('PIECE')
+        Laby -> C : setTraversable(true)
+    end
+end
 
-== Repetition ==
-
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
+deactivate Laby
 @enduml
