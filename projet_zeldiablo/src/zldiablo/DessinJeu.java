@@ -27,16 +27,14 @@ public class DessinJeu implements moteurJeu.DessinJeu {
                 } else if (laby.getCase(j, i).getNom() == 'p') {
                     g.setColor(Color.yellow);
                     g.fillRect(j * tailleCaseX, i * tailleCaseY, tailleCaseX, tailleCaseY);
-                } else if (laby.getCase(j, i).getNom() == 'c') {
-                    if(!laby.getCase(j, i).getPris()) {
-                        g.setColor(Color.ORANGE);
-                        g.fillOval(
-                                j * tailleCaseX + tailleCaseY / 4,
-                                i * tailleCaseY + tailleCaseY / 4,
-                                tailleCaseX / 2,
-                                tailleCaseY / 2
-                        );
-                    }
+                } else if (laby.getCase(j, i).getNom() == 'c'&&!laby.getCase(j, i).getPris()) {
+                    g.setColor(Color.ORANGE);
+                    g.fillOval(
+                        j * tailleCaseX + tailleCaseY / 4,
+                        i * tailleCaseY + tailleCaseY / 4,
+                        tailleCaseX / 2,
+                        tailleCaseY / 2
+                    );
                 }
             }
 
