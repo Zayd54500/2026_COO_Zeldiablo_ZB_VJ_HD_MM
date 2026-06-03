@@ -25,6 +25,8 @@ public class Labyrinth {
                     this.grille[y][x] = new CaseVide();
                 } else if(caractere == 'P'){
                     this.grille[y][x] = new Piege();
+                } else if(caractere == 'C'){
+                    this.grille[y][x] = new Piege();
                 }
             }
         }

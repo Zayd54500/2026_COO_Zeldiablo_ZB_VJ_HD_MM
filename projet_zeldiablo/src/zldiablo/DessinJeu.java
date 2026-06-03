@@ -19,16 +19,22 @@ public class DessinJeu implements moteurJeu.DessinJeu {
         int tailleCaseY = hauteurDisponible / laby.getTailleY();
 
 
-        for(int i = 0; i<laby.getTailleY(); i++){
-            for(int j = 0; j<laby.getTailleX(); j++){
-                if(laby.getCase(j, i).getNom()=='m'){
+        for (int i = 0; i < laby.getTailleY(); i++) {
+            for (int j = 0; j < laby.getTailleX(); j++) {
+                if (laby.getCase(j, i).getNom() == 'm') {
                     g.setColor(Color.gray);
-                    g.fillRect(j*tailleCaseX, i*tailleCaseY, tailleCaseX, tailleCaseY);
-                } else {
-                    if(laby.getCase(j, i).getNom()=='p'){
-                        g.setColor(Color.yellow);
-                        g.fillRect(j*tailleCaseX, i*tailleCaseY, tailleCaseX, tailleCaseY);
-                    }
+                    g.fillRect(j * tailleCaseX, i * tailleCaseY, tailleCaseX, tailleCaseY);
+                } else if (laby.getCase(j, i).getNom() == 'p') {
+                    g.setColor(Color.yellow);
+                    g.fillRect(j * tailleCaseX, i * tailleCaseY, tailleCaseX, tailleCaseY);
+                } else if (laby.getCase(j, i).getNom() == 'c') {
+                    g.setColor(Color.ORANGE);
+                    g.fillOval(
+                            j * tailleCaseX + tailleCaseY / 4,
+                            i * tailleCaseY + tailleCaseY / 4,
+                            tailleCaseX / 2,
+                            tailleCaseY / 2
+                    );
                 }
             }
 
@@ -38,6 +44,7 @@ public class DessinJeu implements moteurJeu.DessinJeu {
                 g.setColor(Color.blue);
             }
         }
+
         g.fillRect(joueur.getPosX()*tailleCaseX, joueur.getPosY()*tailleCaseY, tailleCaseX, tailleCaseY);
         g.setColor(Color.RED);
         g.drawString("Vie : "+joueur.getVie(), 40, 20);
