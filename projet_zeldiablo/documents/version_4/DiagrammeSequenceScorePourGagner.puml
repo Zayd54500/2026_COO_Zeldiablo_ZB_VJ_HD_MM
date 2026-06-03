@@ -1,2 +1,35 @@
 @startuml
+participant Jeu as j
+participant Labyrinthe as l
+participant Sortie as s
+participant Joueur as pj
+-> j : evoluer()
+activate j
+j -> pj : getScore()
+activate pj
+pj --> j : 1000
+deactivate pj
+j -> l : activerSortie()
+activate l
+l --> j
+deactivate l
+j -> l : estUneSortieActive()
+activate l
+l -> pj : getX()
+activate pj
+pj --> l : x
+deactivate pj
+l -> pj : getY()
+activate pj
+pj --> l : y
+deactivate pj
+l --> j : true
+<-- j
+deactivate l
+deactivate j
+activate j
+-> j : etreFinis()
+<-- j : true
+deactivate j
+
 @enduml
