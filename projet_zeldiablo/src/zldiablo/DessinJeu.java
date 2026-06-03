@@ -32,7 +32,7 @@ public class DessinJeu implements moteurJeu.DessinJeu {
                 }
             }
         }
-        g.setColor(Color.blue);
+        g.setColor(Color.white);
         g.fillRect(joueur.getPosX()*tailleCaseX, joueur.getPosY()*tailleCaseY, tailleCaseX, tailleCaseY);
         g.dispose();
     }
