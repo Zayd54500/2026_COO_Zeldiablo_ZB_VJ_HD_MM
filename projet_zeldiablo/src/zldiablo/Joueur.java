@@ -37,7 +37,7 @@ public class Joueur implements Personnage{
         if(laby.getCase(this.posX, this.posY).getNom()=='p'){
             this.subirDegats(1);
         } else {
-            if(laby.getCase(this.posX, this.posY).getNom()=='c') {
+            if(laby.getCase(this.posX, this.posY).getNom()=='c' && !laby.getCase(this.posX, this.posY).getPris()) {
                 this.augmenterScore(100);
                 laby.getCase(this.posX, this.posY).etrePris();
             }
