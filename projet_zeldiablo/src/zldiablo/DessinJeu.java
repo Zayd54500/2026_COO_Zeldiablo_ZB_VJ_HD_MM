@@ -38,13 +38,14 @@ public class DessinJeu implements moteurJeu.DessinJeu {
                 g.setColor(Color.blue);
             }
         }
-        g.setColor(Color.blue);
         g.fillRect(joueur.getPosX()*tailleCaseX, joueur.getPosY()*tailleCaseY, tailleCaseX, tailleCaseY);
         g.setColor(Color.RED);
         g.drawString("Vie : "+joueur.getVie(), 40, 20);
         if (joueur.estMort()) {
+            Font fonte = new Font(" TimesRoman ",Font.BOLD,30);
+            g.setFont(fonte);
             g.setColor(Color.red);
-            g.drawString("GameOver", 230,275);
+            g.drawString("GameOver", 190,250);
         }
         g.dispose();
     }
