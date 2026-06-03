@@ -3,13 +3,35 @@ package zldiablo;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 
+/**
+ * Gère l'affichage graphique du jeu Zeldiablo.
+ *
+ * Cette classe dessine le labyrinthe, les murs, les pièges, les pièces,
+ * la sortie, le joueur, la vie, le score ainsi que les messages de fin.
+ */
 public class DessinJeu implements moteurJeu.DessinJeu {
     private Jeu jeu;
     final int largeurDispo = 500;
     final int hauteurDisponible = 500;
+
+    /**
+     * Crée l'affichage graphique associé à une partie.
+     *
+     * @param j le jeu à afficher.
+     */
     public DessinJeu(Jeu j){
         this.jeu = j;
     }
+
+    /**
+     * Dessine l'état actuel du jeu dans une image.
+     *
+     * La méthode parcourt toutes les cases du labyrinthe et dessine chaque élément
+     * avec une couleur différente. Elle affiche aussi le joueur, sa vie, son score,
+     * puis les messages GameOver ou You Win si la partie est terminée.
+     *
+     * @param image l'image sur laquelle le jeu est dessiné.
+     */
     @Override
     public void dessiner(BufferedImage image) {
         Graphics2D g = (Graphics2D) image.getGraphics();

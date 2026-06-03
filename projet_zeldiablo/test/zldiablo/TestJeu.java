@@ -2,6 +2,9 @@ package zldiablo;
 
 import moteurJeu.Commande;
 import org.junit.Test;
+
+import java.io.IOException;
+
 import static org.junit.Assert.*;
 
 public class TestJeu {
@@ -75,5 +78,40 @@ public class TestJeu {
         jeu.getJoueur().subirDegats(100);
 
         assertTrue("Le jeu doit être finis quand le joueur est mort", jeu.etreFini());
+    }
+
+    @Test
+    public void testJeuPasGagnatAuDepart() {
+        Jeu jeu = new Jeu();
+        Commande commande = new Commande();
+
+        assertFalse("Le jeu ne doit pas être gagné au départ", jeu.aGagne());
+        assertFalse("le jeu ne doit pas être finis au départ", jeu.etreFini());
+    }
+
+    @Test
+    public void testScore1000ActiverSortie() {
+        Jeu jeu = new Jeu();
+        Commande commande = new Commande();
+
+        Joueur joueur = (Joueur) jeu.getJoueur();
+        joueur.augmenterScore(1000);
+        jeu.evoluer(commande);
+
+        assertTrue("La sortie doit s'activer une fois le score de 1000 atteint", jeu.getLaby().estUneSortieActive(18,19));
+        assertFalse("Activer la sortie ne veut pas dire que le joueur a déjà gagné", jeu.aGagne());
+    }
+
+    @Test
+    public void testScoreInferieur1000NactivePasSortie() {
+        Jeu jeu = new Jeu();
+        Commande commande = new Commande();
+
+        Joueur joueur = (Joueur) jeu.getJoueur();
+        joueur.augmenterScore(1);
+        jeu.evoluer(commande);
+
+        assertFalse("La sortie ne doit pas s'activer si le score est inférieur à 1000", jeu.getLaby().estUneSortieActive(18,19));
+        assertFalse("Le jeu ne doit pas gagné", jeu.aGagne());
     }
 }
