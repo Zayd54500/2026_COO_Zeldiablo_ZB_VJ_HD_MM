@@ -4,6 +4,7 @@ public class Joueur implements Personnage{
     private int posX;
     private int posY;
     private int vie;
+    private int score;
     public Joueur(){
         this.vie = 3;
         this.posX = 1;
@@ -35,7 +36,15 @@ public class Joueur implements Personnage{
         }
         if(laby.getCase(this.posX, this.posY).getNom()=='p'){
             this.subirDegats(1);
+        } else {
+            if(laby.getCase(this.posX, this.posY).getNom()=='c') {
+                this.augmenterScore(100);
+            }
         }
+    }
+    public void augmenterScore(int s){
+        this.score += s;
+        System.out.println("Le joueur à gagner " + s + " de score !");
     }
 
     public void subirDegats(int degats) {
