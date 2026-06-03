@@ -84,15 +84,50 @@ public class TestJoueur {
         Labyrinth laby = new Labyrinth();
         Joueur joueur = new Joueur();
 
+        for (int i = 0; i < 9; i++) {
+            joueur.deplacement('E', laby);
+        }
+
+        assertEquals("Le joueur doit être juste avant le mur intérieur", 9, joueur.getPosX());
+        assertEquals("Le joueur doit être sur la ligne 1", 1, joueur.getPosY());
+
         joueur.deplacement('E', laby);
-        joueur.deplacement('S', laby);
 
-        assertEquals(2, joueur.getPosX());
-        assertEquals(2, joueur.getPosY());
-
-        joueur.deplacement('E', laby);
-
-        assertEquals("Le joueur ne doit pas traverser le mur intérieur", 2, joueur.getPosX());
-        assertEquals("Le joueur ne doit pas traverser le mur intérieur", 2, joueur.getPosY());
+        assertEquals("Le joueur ne doit pas traverser le mur intérieur", 9, joueur.getPosX());
+        assertEquals("Le joueur ne doit pas traverser le mur intérieur", 1, joueur.getPosY());
     }
+
+    @Test
+    public void testJoueurNePasTraverserMurHaut() throws IOException {
+        Labyrinth laby = new Labyrinth();
+        Joueur joueur = new Joueur();
+
+        joueur.deplacement('N', laby);
+
+        assertEquals("Le joueur ne doit pas traverser le mur du haut", 1, joueur.getPosX());
+        assertEquals("Le joueur ne doit pas traverser le mur du haut", 1, joueur.getPosY());
+    }
+
+    @Test
+    public void testJoueurNePasTraverserMurGauche() throws IOException {
+        Labyrinth laby = new Labyrinth();
+        Joueur joueur = new Joueur();
+
+        joueur.deplacement('O', laby);
+
+        assertEquals("Le joueur ne doit pas traverser le mur de gauche", 1, joueur.getPosX());
+        assertEquals("Le joueur ne doit pas traverser le mur de gauche", 1, joueur.getPosY());
+    }
+
+    @Test
+    public void testDirectionInconnueNeBougePasLeJoueur() throws IOException {
+        Labyrinth laby = new Labyrinth();
+        Joueur joueur = new Joueur();
+
+        joueur.deplacement('X', laby);
+
+        assertEquals("Une direction inconnue ne doit pas modifier X", 1, joueur.getPosX());
+        assertEquals("Une direction inconnue ne doit pas modifier Y", 1, joueur.getPosY());
+    }
+
 }
