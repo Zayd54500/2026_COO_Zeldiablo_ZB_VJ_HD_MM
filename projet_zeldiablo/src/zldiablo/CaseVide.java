@@ -7,4 +7,9 @@ public class CaseVide implements Case {
     public char getNom(){
         return 'v';
     }
+    public void etrePris(){
+    }
+    public boolean getPris(){
+        return false;
+    }
 }

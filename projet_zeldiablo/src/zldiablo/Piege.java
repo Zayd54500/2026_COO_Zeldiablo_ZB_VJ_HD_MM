@@ -7,4 +7,8 @@ public class Piege implements Case{
     public char getNom(){
         return 'p';
     }
+    public void etrePris(){}
+    public boolean getPris(){
+        return false;
+    }
 }

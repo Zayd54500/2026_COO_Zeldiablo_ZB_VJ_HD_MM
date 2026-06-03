@@ -7,4 +7,8 @@ public class Mur implements Case {
     public char getNom(){
         return 'm';
     }
+    public void etrePris(){}
+    public boolean getPris(){
+        return false;
+    }
 }
